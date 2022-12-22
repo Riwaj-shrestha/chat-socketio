@@ -1,0 +1,44 @@
+<router-outlet></router-outlet>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="./favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
+    Socket.io Chat
+  </a>
+</nav>
+<div class="container">
+
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-8">
+      <div *ngFor="let messageItem of messageList"  [ngClass]="connectionId === messageItem.user ? 'ur-box' : 'other-box'">
+        <div class="message">
+            {{messageItem.message}}
+        </div>
+    </div>
+     <div class="row">
+    <div class="col-12">
+      <div class="form-group input-group">
+        <input type="text" class="form-control" [(ngModel)]="newMessage" (keyup)="$event.keyCode == 13 && sendMessage()" />
+        <button (click)="sendMessage()" class="btn btn-primary">Send Message</button>
+      </div>
+    </div>
+  </div>
+    </div>
+    <div class="col-4">
+      <h6 class="font-weight-bold">Connections</h6>
+      <ul>
+        <li *ngFor="let connection of connectionList">{{ connection }}</li>
+      </ul>
+    </div>
+  </div>
+
+
+</div>
+
+
+<div>
+
+</div>
+
+

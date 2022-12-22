@@ -1,0 +1,19 @@
+.ur-box {
+  display: flex;
+  justify-content: flex-end;
+
+  & > .message {
+    padding: 1rem;
+    background: #e6e6e6;
+  }
+}
+.other-box {
+  display: flex;
+  & > .message {
+    padding: 1rem;
+    background: #94d9ff;
+  }
+}
+.message {
+  margin-bottom: 0.5rem ;
+}
